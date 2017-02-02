@@ -15,8 +15,8 @@ public class Parser {
 			Scanner sc=new Scanner(fr);
 			
 			String[] row=sc.nextLine().split(" ");
-			int w=Integer.parseInt(row[0]);
-			int h=Integer.parseInt(row[1]);
+			int h=Integer.parseInt(row[0]);
+			int w=Integer.parseInt(row[1]);
 			int a=Integer.parseInt(row[2]);
 			a++;
 			row=sc.nextLine().split(" ");
@@ -59,10 +59,12 @@ public class Parser {
 			for (int i = 0; i < h; i++) {
 				for (int j = 0; j < w; j++) {
 					for (int k = 0; k < a; k++) {
-						DataStore.vertices.add(inVertices[j][h][a]);
+						DataStore.vertices.add(inVertices[j][i][k]);
 					}
 				}
-			}		
+			}	
+			
+			DataStore.initTiles();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

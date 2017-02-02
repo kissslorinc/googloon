@@ -13,8 +13,11 @@ public class Tile {
 		y=_y;
 		important=_important;
 		vertices=new ArrayList<Vertex>();
-		for (int i=0;i<=DataStore.a;i++)
-			vertices.add(DataStore.getVertexAt(_x, _y, i));
+	}
+	
+	public void initVertices() {
+		for (int i=0;i<DataStore.a;i++)
+			vertices.add(DataStore.getVertexAt(x, y, i));
 	}
 	
 	public int getPos(Coord c) {

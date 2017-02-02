@@ -19,9 +19,17 @@ public class DataStore {
 		DataStore.h= h;
 		radius=r;
 		map=new Tile[w][h];
-		for (int i = 0; i < map.length; i++) {
-			for (int j = 0; j < map[0].length; j++) {
+		for (int i = 0; i < w; i++) {
+			for (int j = 0; j < h; j++) {
 				map[i][j]=new Tile(i, j, false);
+			}
+		}
+	}
+	
+	public static void initTiles() {
+		for (int i = 0; i < w; i++) {
+			for (int j = 0; j < h; j++) {
+				map[i][j].initVertices();
 			}
 		}
 	}
