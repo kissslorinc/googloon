@@ -7,7 +7,8 @@ public class DataStore {
 	
 	
 	public static Tile[][] map;
-	public static List<Vertex> vertexes = new ArrayList<Vertex>();
+	public static List<Vertex> vertices = new ArrayList<Vertex>();
+	private static int radius;
 	static int w, a, h;
 	
 	public void initParameters(int w, int h, int alt){
@@ -16,22 +17,26 @@ public class DataStore {
 		DataStore.h= h;
 	}
 	
-	private static void initVertexList(){
-		for (int i=0; i<h; i++){
-			for (int j = 0; j<w; j++){
-				for (int k=0; k<h; k++){
-					vertexes.add(new Vertex(k, j, i));
-				}
-			}
-		}
-	}
-	
 	private static void initVertexes(){
 		
 	}
 	
+	public static int score(){
+		return 0;
+	}
+	
+	public static void cycle(){
+		
+	}
+	
+	
+	
 	public static Vertex getVertexAt(int x, int y, int z){
-		return vertexes.get(z+x*a + y*w*a);
+		return DataStore.vertices.get(z+x*a + y*w*a);
+	}
+	
+	public static int getRadius(){
+		return radius;
 	}
 	
 }

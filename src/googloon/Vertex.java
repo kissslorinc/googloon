@@ -1,38 +1,39 @@
 package googloon;
 
 public class Vertex {
-	
-	Vertex plus;
-	Vertex minus;
-	Vertex zero;
-	
+		
 	int x;
 	int y;
 	int z;
 	
-	public Vertex(int x, int y, int z){
+	int windX;
+	int windY;
+	
+	public Vertex(int x, int y, int z, int windy, int windx){
 		this.x = x;
 		this.y = y;
 		this.z = z;
+		windX  = windx;
+		windY = windy;
 	}
 	
-	public void initVertex(Vertex p, Vertex m, Vertex z){
-		plus = p;
-		minus = m;
-		zero = z;
+	public void initVertex(int x, int y){
+	
 	}
 	
 	public Vertex nextVertex(int direction){
-		switch (direction) {
-		case 0: return zero;
-		case 1: return plus;
-		case -1: return minus; }
-		return null;
+		
+		
+		
+	/*else*/ return DataStore.getVertexAt(this.y + windY ,this.x + windX ,this.z + direction);
 	}
 	
 	public int getPos(Coord c){
-		return 0;
+		switch (c){
+		case X: return this.x;
+		case Y: return this.y;
+		case Z: return this.z;
+		}
+		return -1;
 	}
-	
-	
 }
