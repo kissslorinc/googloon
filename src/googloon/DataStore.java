@@ -6,11 +6,11 @@ import java.util.List;
 public class DataStore {
 	
 	public static List<Vertex> vertexes = new ArrayList<Vertex>();
-	static int w, alt, h;
+	static int w, a, h;
 	
 	public void initParameters(int w, int h, int alt){
 		DataStore.w= w;
-		DataStore.alt = alt;
+		DataStore.a = alt;
 		DataStore.h= h;
 	}
 	
