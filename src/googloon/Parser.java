@@ -13,8 +13,8 @@ public class Parser {
 			FileReader fr=new FileReader(path);
 			BufferedReader br=new BufferedReader(fr);
 			
-			br.readLine();
-			
+			String[] row=br.readLine().split(" ");
+			DataStore.
 			
 			
 		} catch (Exception e) {

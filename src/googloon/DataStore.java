@@ -12,7 +12,7 @@ public class DataStore {
 	private static int radius;
 	static int w, a, h;
 	
-	public void initParameters(int w, int h, int a){
+	public static void initParameters(int w, int h, int a){
 		DataStore.w= w;
 		DataStore.a = a + 1;
 		DataStore.h= h;
