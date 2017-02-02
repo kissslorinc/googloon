@@ -31,7 +31,7 @@ public class DataStore {
 	}
 	
 	public static Vertex getVertexAt(int x, int y, int z){
-		return DataStore.vertices.get(z+x*a + y*w*a);
+		return DataStore.vertices.get(z+(x%w)*a + y*w*a);
 	}
 	
 	public static int getRadius(){
