@@ -1,7 +1,6 @@
 package googloon;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 
@@ -14,10 +13,11 @@ public class Parser {
 			FileReader fr=new FileReader(path);
 			BufferedReader br=new BufferedReader(fr);
 			
+			br.readLine();
 			
 			
 			
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

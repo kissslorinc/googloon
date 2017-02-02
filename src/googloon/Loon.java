@@ -27,7 +27,7 @@ public class Loon {
 	}
 	
 	public boolean isOver(int tx, int ty) {
-		return (x-tx)*(x-tx)+(Math.min(Math.abs(y-ty), DataStore.w-Math.abs(y-ty) ))<=DataStore.getRadius();
+		return (x-tx)*(x-tx)+(Math.pow(Math.min(Math.abs(y-ty), DataStore.w-Math.abs(y-ty)),2))<=Math.pow(DataStore.getRadius(),2);
 		}
 	
 	public Tile getTileUnder() {
