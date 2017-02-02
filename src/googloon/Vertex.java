@@ -17,8 +17,8 @@ public class Vertex {
 		windY = windy;
 	}
 
-	public Vertex nextVertex(int direction) {
-		switch (direction) {
+	public Vertex nextVertex(int dir) {
+		switch (dir) {
 		case -1:
 			if (z == 1 || z == 0) {
 				return null;
@@ -29,12 +29,12 @@ public class Vertex {
 				return null;
 			}
 		}
-		if ((y + DataStore.getVertexAt(x, y, z + direction).windY) <= 0
-				|| (y + DataStore.getVertexAt(x, y, z + direction).windY) >= DataStore.a) {
+		if ((y + DataStore.getVertexAt(x, y, z + dir).windY) <= 0
+				|| (y + DataStore.getVertexAt(x, y, z + dir).windY) >= DataStore.a) {
 			return null;
 		}
-		return DataStore.getVertexAt(DataStore.getVertexAt(x, y, z + direction).windX + x,
-				DataStore.getVertexAt(x, y, z + direction).windY + y, z + direction);
+		return DataStore.getVertexAt(DataStore.getVertexAt(x, y, z + dir).windX + x,
+				DataStore.getVertexAt(x, y, z + dir).windY + y, z + dir);
 	}
 
 	public int getPos(Coord c) {
