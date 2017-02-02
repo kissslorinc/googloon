@@ -32,5 +32,9 @@ public class Loon {
 	
 	public Tile getTileUnder() {
 		return DataStore.map[x][y];
-		}	
+		}
+	
+	public Vertex getVertex() {
+		return DataStore.getVertexAt(x, y, z);
+	}
 }
