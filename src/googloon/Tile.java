@@ -28,6 +28,9 @@ public class Tile {
 	}
 	
 	int isOnline() {
+		for (Loon l : DataStore.loons) {
+			if (l.isOver(x, y)) return 1;
+		}
 		return 0;
 	}
 	
