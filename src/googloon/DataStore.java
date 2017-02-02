@@ -12,9 +12,9 @@ public class DataStore {
 	private static int radius;
 	static int w, a, h;
 	
-	public void initParameters(int w, int h, int alt){
+	public void initParameters(int w, int h, int a){
 		DataStore.w= w;
-		DataStore.a = alt + 1;
+		DataStore.a = a + 1;
 		DataStore.h= h;
 	}
 	
