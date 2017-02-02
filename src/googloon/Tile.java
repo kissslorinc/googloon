@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Tile {
 	
 	final int x, y;
-	final boolean important; 
+	boolean important; 
 	private ArrayList<Vertex> vertices;
 	
 	public Tile(int _x, int _y, boolean _important) {
@@ -44,7 +44,7 @@ public class Tile {
 		for (int i=0;i<DataStore.map.length;i++) {
 			for (int j = 0; j < DataStore.map[0].length; j++) {
 				Tile currTile=DataStore.map[i][j];
-				value += ((x-currTile.x)*(x-currTile.x)+Math.pow(Math.min(Math.abs(y-currTile.y), DataStore.w-Math.abs(y-currTile.y)),2))<=Math.pow(DataStore.getRadius(),2)?1:0;
+				value += (currTile.important && ((x-currTile.x)*(x-currTile.x)+Math.pow(Math.min(Math.abs(y-currTile.y), DataStore.w-Math.abs(y-currTile.y)),2))<=Math.pow(DataStore.getRadius(),2))?1:0;
 			}
 		}
 		return value;

@@ -11,11 +11,19 @@ public class DataStore {
 	public static List<Vertex> vertices = new ArrayList<Vertex>();
 	private static int radius;
 	static int w, a, h;
+	public static int turns; 
 	
-	public static void initParameters(int w, int h, int a){
+	public static void initParameters(int w, int h, int a, int r){
 		DataStore.w= w;
-		DataStore.a = a + 1;
+		DataStore.a = a;
 		DataStore.h= h;
+		radius=r;
+		map=new Tile[w][h];
+		for (int i = 0; i < map.length; i++) {
+			for (int j = 0; j < map[0].length; j++) {
+				map[i][j]=new Tile(i, j, false);
+			}
+		}
 	}
 	
 	public static int score(){
