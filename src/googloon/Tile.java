@@ -23,11 +23,15 @@ public class Tile {
 			return x;
 		case Y:
 			return y;
+		default:
+			return -1;
 		}
-		return -1;
 	}
 	
 	int isOnline() {
+		for (Loon l : DataStore.loons) {
+			if (l.isOver(x, y)) return 1;
+		}
 		return 0;
 	}
 	
