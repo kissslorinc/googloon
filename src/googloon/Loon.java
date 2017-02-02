@@ -26,11 +26,12 @@ public class Loon {
 		nextStep = i;
 	}
 	
-	public boolean isOver(int x, int y) {
-		return this.x==x && this.y==y;}
+	public boolean isOver(int tx, int ty) {
+		int r=1;
+		return (x-tx)*(x-tx)+(Math.min(Math.abs(y-ty), DataStore.w-Math.abs(y-ty) ))<=r;
+		}
 	
 	public Tile getTileUnder() {
 		return DataStore.map[x][y];
-		}
-	
+		}	
 }
