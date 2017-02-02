@@ -6,6 +6,16 @@ public class Vertex {
 	Vertex minus;
 	Vertex zero;
 	
+	int x;
+	int y;
+	int z;
+	
+	public Vertex(int x, int y, int z){
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+	
 	public void initVertex(Vertex p, Vertex m, Vertex z){
 		plus = p;
 		minus = m;
@@ -20,7 +30,7 @@ public class Vertex {
 		return null;
 	}
 	
-	public int getCoord(Coord c){
+	public int getPos(Coord c){
 		return 0;
 	}
 	
