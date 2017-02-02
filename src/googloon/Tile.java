@@ -8,7 +8,7 @@ public class Tile {
 	final boolean important; 
 	private ArrayList<Vertex> vertices;
 	
-	Tile(int _x, int _y, boolean _important) {
+	public Tile(int _x, int _y, boolean _important) {
 		x=_x;
 		y=_y;
 		important=_important;
@@ -17,7 +17,7 @@ public class Tile {
 			vertices.add(DataStore.getVertexAt(_x, _y, i));
 	}
 	
-	int getPos(Coord c) {
+	public int getPos(Coord c) {
 		switch(c) {
 		case X:
 			return x;
@@ -28,15 +28,27 @@ public class Tile {
 		}
 	}
 	
-	int isOnline() {
+	public int isOnline() {
 		for (Loon l : DataStore.loons) {
 			if (l.isOver(x, y)) return 1;
 		}
 		return 0;
 	}
 	
-	ArrayList<Vertex> vertices() {
+	public ArrayList<Vertex> vertices() {
 		return vertices;
 	}
+	
+	public int value() {
+		int value=0;
+		for (int i=0;i<DataStore.map.length;i++) {
+			for (int j = 0; j < DataStore.map[0].length; j++) {
+				Tile currTile=DataStore.map[i][j];
+				value += ((x-currTile.x)*(x-currTile.x)+Math.pow(Math.min(Math.abs(y-currTile.y), DataStore.w-Math.abs(y-currTile.y)),2))<=Math.pow(DataStore.getRadius(),2)?1:0;
+			}
+		}
+		return value;
+	}
+	
 	
  }
