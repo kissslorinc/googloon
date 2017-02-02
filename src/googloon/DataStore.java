@@ -7,6 +7,7 @@ public class DataStore {
 	
 	
 	public static Tile[][] map;
+	public static List<Loon> loons = new ArrayList<Loon>();
 	public static List<Vertex> vertices = new ArrayList<Vertex>();
 	private static int radius;
 	static int w, a, h;
@@ -28,8 +29,6 @@ public class DataStore {
 	public static void cycle(){
 		
 	}
-	
-	
 	
 	public static Vertex getVertexAt(int x, int y, int z){
 		return DataStore.vertices.get(z+x*a + y*w*a);
