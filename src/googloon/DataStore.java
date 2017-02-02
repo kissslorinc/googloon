@@ -18,16 +18,29 @@ public class DataStore {
 		DataStore.h= h;
 	}
 	
-	private static void initVertexes(){
-		
-	}
-	
 	public static int score(){
-		return 0;
+		int score = 0;
+		for (int i=0; i<map.length; i++){
+			for (int j = 0; j<map[i].length; j++){
+				score += map[i][j].isOnline();
+			}
+		}
+		return score;
 	}
 	
 	public static void cycle(){
-		
+		int i = 0;
+		while (i<loons.size()){
+			if (getVertexAt(loons.get(i).getPos(Coord.X), loons.get(i).getPos(Coord.Y), loons.get(i).getPos(Coord.Z)).nextVertex(loons.get(i).nextStep) == null){
+				loons.remove(i);
+			}
+			else {
+				loons.get(i).x = (getVertexAt(loons.get(i).getPos(Coord.X), loons.get(i).getPos(Coord.Y), loons.get(i).getPos(Coord.Z)).nextVertex(loons.get(i).nextStep)).x;
+				loons.get(i).y = (getVertexAt(loons.get(i).getPos(Coord.X), loons.get(i).getPos(Coord.Y), loons.get(i).getPos(Coord.Z)).nextVertex(loons.get(i).nextStep)).y;
+				loons.get(i).z = (getVertexAt(loons.get(i).getPos(Coord.X), loons.get(i).getPos(Coord.Y), loons.get(i).getPos(Coord.Z)).nextVertex(loons.get(i).nextStep)).z;
+				i++;
+			}
+		}
 	}
 	
 	public static Vertex getVertexAt(int x, int y, int z){
