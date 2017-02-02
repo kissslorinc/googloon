@@ -1,5 +1,8 @@
 package googloon;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Vertex {
 
 	int x;
@@ -51,5 +54,16 @@ public class Vertex {
 	
 	public Tile tileUnder(){
 		return DataStore.map[x][y]; 
+	}
+	
+	public ArrayList<Vertex> getNeighbours(){
+		ArrayList<Vertex> neighbours = new ArrayList<Vertex>();
+        if(this.nextVertex(-1) != null)
+        	neighbours.add(this.nextVertex(-1));
+        if(this.nextVertex(0) != null)
+        	neighbours.add(this.nextVertex(0));
+        if(this.nextVertex(1) != null)
+        	neighbours.add(this.nextVertex(1));
+        return neighbours;
 	}
 }
